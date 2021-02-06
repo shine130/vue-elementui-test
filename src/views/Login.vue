@@ -23,8 +23,8 @@
     data() {
       return {
         ruleForm:{
-          name:'',
-          pwd:''
+          name:'admin',
+          pwd:'admin'
         },
         rules:{
           name: [
