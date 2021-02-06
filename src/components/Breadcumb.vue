@@ -19,5 +19,5 @@
 </script>
 
 <style>
-
+  .el-breadcrumb{height: 60px; line-height: 60px; font-size: 16px;}
 </style>

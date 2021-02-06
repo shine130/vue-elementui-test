@@ -40,7 +40,7 @@ export default {
 <style>
 .el-container{min-height: 100vh;}
  .el-header, .el-footer {
-    background-color: #B3C0D1;
+    background-color: #ddd;
     color: #333;
     text-align: center;
     line-height: 60px;
@@ -74,7 +74,7 @@ export default {
     line-height: 320px;
   }
   .el-menu{border-right: 0;}
-  .el-breadcrumb{height: 60px; line-height: 60px; font-size: 16px;}
+
   .ex_button{float: right; margin-top: 8px;}
 </style>
 
