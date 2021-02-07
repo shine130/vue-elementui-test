@@ -8,34 +8,53 @@
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
+      router
       >
-      <!-- 无子级 -->
-      <el-menu-item index="1">
-        <i class="el-icon-menu"></i>
-        <span slot="title">首页</span>
-      </el-menu-item>
-      <!-- 有子级 -->
-      <el-submenu index="2">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>信息管理</span>
-        </template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-      </el-submenu>
+      <NavItem v-for="(v,i) in items" :key="i" :basePath="v.url" :item="v"  />
 
-   
     </el-menu>
-
-
   </el-aside>
 </template>
 <script>
+import NavItem from './NavItem.vue'
   export default {
     data() {
       return {
-        
+        items:[
+          {
+            name:'首页',
+            url:'/index'
+          },
+          {
+            name:'数据统计',
+            url:'/stats'
+          },
+          {
+            name:'信息管理',
+            url:'/wms',
+            child:[
+              {
+                name:'列表展示',
+                url:'/wms/list'
+              }
+            ]
+          },
+          {
+            name:'用户管理',
+            url:'/user',
+            child:[
+              {
+                name:'用户统计',
+                url:'/user/list'
+              }
+            ]
+          },
+
+        ]
       };
+    },
+    components:{
+      NavItem
     },
     methods: {
       handleOpen(key, keyPath) {

@@ -11,7 +11,9 @@
       <Breadcumb />
     </el-header>
     <!-- 右侧主体区域 -->
-    <el-main>Main</el-main>
+    <el-main>
+      <router-view />
+    </el-main>
   </el-container>
 </el-container>
   </div>
