@@ -1,6 +1,6 @@
 <template>
   <div>
-    stats
+    数据统计
   </div>
 </template>
 <script>

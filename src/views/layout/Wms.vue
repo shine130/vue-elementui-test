@@ -1,6 +1,6 @@
 <template>
   <div>
-    首页
+    信息管理-列表展示
   </div>
 </template>
 <script>

@@ -1,7 +1,7 @@
 <template>
  <el-aside width="220px">
       <el-menu
-      default-active="1"
+      :default-active="$route.path" exact
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
@@ -56,6 +56,9 @@ import NavItem from './NavItem.vue'
     components:{
       NavItem
     },
+    mounted(){
+        // this.getNav(); 
+      },
     methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
@@ -63,6 +66,16 @@ import NavItem from './NavItem.vue'
       handleClose(key, keyPath) {
         console.log(key, keyPath);
       },
+      getNav(){
+            // 请求接口
+            this.$http.get('/get_nav').then(res => {
+              let {code,result} = res.data;
+              if(code == "200"){
+                this.items = result;
+              }
+            })
+         
+      }
     },
   }
 </script>

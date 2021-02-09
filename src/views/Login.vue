@@ -43,6 +43,23 @@
        this.$refs[formName].validate((valid) => {
           if (valid) {
             let {name,pwd} = this.ruleForm;
+
+            // 请求接口
+/*             this.$http({
+              method:'post',
+              url:'/get_login',
+              data:{user:name,password:password}
+            }).then(res => {
+              console.log(res);
+              let {code,msg} = res.data;
+              if(code == '200'){
+                sessionStorage.setItem('username',name);
+                this.$router.push('/home');
+              }else{
+                alert(msg);
+              }
+            }) */
+
             if(name == 'admin' && pwd == 'admin'){
               //缓存
               sessionStorage.setItem('username',name);
